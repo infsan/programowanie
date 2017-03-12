@@ -1,0 +1,112 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package searching;
+
+/**
+ *
+ * @author P1
+ */
+public class Searching {
+
+    public static void main(String[] args) {
+        
+        
+    int dlwek=19;
+int ilwyp=11;
+int[] wek = {5,7,12,14,18,23,27,34,56,60,62,0,0,0,0,0,0,0,0,0};
+int i,j, ms;
+int el_szukany = 27;
+
+//po dodaniu
+//{5,7,12,14,18,19,23,27,34,56,60,62,0,0,0,0,0,0,0,0}; 
+int el_usuwany = 60;
+//po usuniêciu
+//{5,7,12,14,18,19,23,27,34,56,62,0,0,0,0,0,0,0,0,0}; 
+
+//tu dopisujemy w³asny kod
+
+//wydruk wektora
+System.out.println("wektor");
+for (i=0;i<dlwek;i++)
+    {
+        System.out.print(wek[i]+" ");
+    }
+
+System.out.println();
+System.out.println();
+                
+//--------------------------------------------------------
+//szukanie
+for (i=0;i<dlwek;i++) 
+    {
+        if (wek[i]==el_szukany)
+        {
+            System.out.println("Znalazlem " + wek[i]);
+        }
+    }  
+    
+System.out.println();
+
+//--------------------------------------------------------
+//dodawanie
+
+int el_dodawany = 63;
+for (i=0;i<dlwek;i++) 
+    {
+        System.out.print(" "+i+" ");
+        if(wek[i] >= el_dodawany || wek[i]==0) 
+        {     
+        break;        
+        }        
+    }
+
+for(j=dlwek;j>i;j--)
+    {
+        wek[j]=wek[j-1];
+    }
+
+wek[i] = el_dodawany;
+   
+    
+System.out.println("wektor z dodanym elementem");
+
+for (i=0;i<dlwek;i++)
+    {
+        System.out.print(wek[i]+" ");
+    }
+
+
+    
+System.out.println();
+System.out.println();
+
+//--------------------------------------------------------
+//kasowanie
+for (i=0;i<dlwek;i++) 
+    {
+        if(wek[i]==el_usuwany) 
+        break;
+    }
+for(j=i;j<dlwek;j++)
+    {
+        wek[j]=wek[j+1];
+        if (j==dlwek)
+            {
+                wek[j]=0;
+            }
+    }
+
+System.out.println("wektor z usunietym elementem");
+
+for (i=0;i<dlwek;i++)
+    {
+        System.out.print(wek[i]+" ");
+    }
+
+
+System.out.println();
+System.out.println();
+}//main    
+}//Szukaj
